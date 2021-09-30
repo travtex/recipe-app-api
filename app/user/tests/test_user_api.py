@@ -38,6 +38,7 @@ class PublicUserApiTests(TestCase):
         payload = {
             'email': 'test@tarvoscloud.net',
             'password': 'testpass',
+            'name': 'Test Name',
         }
         create_user(**payload)
 
@@ -49,7 +50,8 @@ class PublicUserApiTests(TestCase):
         """Test that the password is more than 5 characters"""
         payload = {
             'email': 'test@tarvoscloud.net',
-            'password': 'pw'
+            'password': 'pw',
+            'name': 'Test Name',
         }
         res = self.client.post(CREATE_USER_URL, payload)
 
